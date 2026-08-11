@@ -158,6 +158,7 @@ Each ASG has its own scaling policy.
 Amazon CloudWatch is used to monitor the infrastructure.
 The current monitoring configuration includes:
 
+```
 Application Load Balancer
 HTTP 5XX responses
 Target Groups
@@ -167,6 +168,7 @@ Register target health
 EC2 / Auto Scaling Groups
 CPU utilization
 CloudWatch provides visibility into the health and performance of the infrastructure.
+```
 
 # 🔔 Alerting with SNS
 
@@ -198,6 +200,7 @@ Note: The /images and /register endpoints currently return HTTP 301 during the A
 The complete infrastructure is managed using Terraform.
 Terraform is used to define and manage:
 
+```
 VPC
 Subnets
 Internet Gateway
@@ -220,10 +223,11 @@ terraform apply
 To destroy the infrastructure:
 terraform plan -destroy
 terraform destroy
-
+```
 
 # 📁 Project Structure
 
+```
 Production-ALB/
 │
 ├── autoscaling.tf
@@ -253,10 +257,12 @@ Production-ALB/
 ├── .gitignore
 ├── .terraform.lock.hcl
 └── README.md
+```
 Terraform state files and local Terraform working directories are excluded from version control.
 
 # 🔐 Security
 
+```
 The architecture follows basic network security principles:
 EC2 instances are deployed without public IP addresses
 Application traffic enters through the ALB
@@ -264,10 +270,12 @@ Backend EC2 instances are isolated in private subnets
 Security Groups control traffic between the ALB and EC2 instances
 NAT Gateway provides controlled outbound internet connectivity
 The infrastructure is managed through version-controlled Terraform configuration
+```
 
 # 🧪 Testing
 
 The following components have been tested:
+```
 ALB connectivity
 Homepage routing
 /images routing
@@ -278,6 +286,7 @@ CloudWatch alarms
 SNS topic
 SNS email subscription
 Target Tracking Auto Scaling configuration
+```
 
 # 🎯 Project Objectives
 
@@ -285,6 +294,7 @@ The main objective of this project is to gain practical experience designing and
 
 The project focuses on:
 
+```
 AWS networking
 Public and private subnet architecture
 Application Load Balancing
@@ -295,8 +305,11 @@ Infrastructure monitoring
 CloudWatch alarms
 SNS notifications
 Infrastructure as Code
+```
 
 # 🚀 Future Improvements
+
+```
 Planned improvements include:
 Complete scale-out and scale-in testing
 Improve ALB health-check configuration
@@ -305,8 +318,11 @@ Introduce CI/CD for infrastructure deployment
 Introduce Terraform remote state management
 Add additional observability
 Further security hardening
+```
 
 # 🛠️ Technology Stack
+
+```
 AWS
 Terraform
 Linux
@@ -319,6 +335,6 @@ CloudWatch
 SNS
 Git
 Bash
-
+```
 
 Build → Automate → Monitor → Scale → Improve
