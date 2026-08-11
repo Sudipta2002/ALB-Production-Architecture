@@ -104,3 +104,17 @@ output "images_launch_template_id" {
 output "register_launch_template_id" {
   value = aws_launch_template.register.id
 }
+output "sns_alert_topic_name" {
+  description = "SNS topic used for CloudWatch alerts"
+  value       = aws_sns_topic.alerts.name
+}
+
+output "sns_alert_topic_arn" {
+  description = "ARN of the SNS topic used for CloudWatch alerts"
+  value       = aws_sns_topic.alerts.arn
+}
+
+output "alert_email" {
+  description = "Email address configured for CloudWatch alerts"
+  value       = var.alert_email
+}

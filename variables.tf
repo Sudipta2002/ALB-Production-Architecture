@@ -12,6 +12,10 @@ variable "project_name" {
   description = "Project Name"
   type        = string
 }
+variable "alert_email" {
+  description = "Email address for CloudWatch alerts"
+  type        = string
+}
 
 variable "key_pair_name" {
   description = "EC2 Key Pair Name"

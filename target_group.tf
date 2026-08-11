@@ -72,9 +72,9 @@ resource "aws_lb_target_group" "register" {
 
   health_check {
 
-    path="/register"
+    path = "/register"
 
-    matcher="200"
+    matcher = "200"
 
   }
 
